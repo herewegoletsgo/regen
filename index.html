@@ -1,0 +1,1322 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The land was always carrying more — a vision for restored farming</title>
+<meta name="description" content="A guided walk through the future of food, where Dorset's wheat fields become wood-pasture mosaics and gentle creatures bring in the harvest one fruit at a time.">
+<meta property="og:title" content="The land was always carrying more">
+<meta property="og:description" content="What if the wilder land got, the more food it carried — and we just couldn't see it?">
+<meta property="og:type" content="website">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,300;1,9..144,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --bg: #f7f3ec;
+  --bg-deep: #ede5d4;
+  --bg-card: #fdfbf6;
+  --ink: #1f2118;
+  --ink-soft: #4a4d3f;
+  --ink-faint: #87897a;
+  --rule: rgba(31, 33, 24, 0.12);
+  --accent: #4a6a25;
+  --accent-deep: #2d4214;
+  --warm: #a04a28;
+  --chalk: #d8cfa8;
+  --grain: #c8b074;
+  --water: #4a7a8a;
+  --serif: 'Fraunces', 'Georgia', serif;
+  --sans: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--sans);
+  font-weight: 400;
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+img { max-width: 100%; display: block; }
+
+.container {
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+.container-wide {
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+/* ====== HERO ====== */
+.hero {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+  padding: 4rem 1.5rem 6rem;
+  background: linear-gradient(180deg, #e8e0c8 0%, #d6cea8 60%, #b8a878 100%);
+  overflow: hidden;
+}
+
+.hero-grain {
+  position: absolute;
+  inset: 0;
+  opacity: 0.4;
+  pointer-events: none;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' /%3E%3CfeColorMatrix values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.06 0' /%3E%3C/filter%3E%3Crect width='400' height='400' filter='url(%23n)' /%3E%3C/svg%3E");
+}
+
+.hero-hills {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 40%;
+  pointer-events: none;
+}
+
+.hero-content {
+  position: relative;
+  max-width: 760px;
+  margin: 0 auto;
+  z-index: 2;
+}
+
+.hero-eyebrow {
+  font-family: var(--sans);
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+  margin-bottom: 2rem;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.hero-eyebrow::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: var(--rule);
+  max-width: 60px;
+}
+
+.hero h1 {
+  font-family: var(--serif);
+  font-weight: 300;
+  font-size: clamp(2.4rem, 6vw, 4.4rem);
+  line-height: 1.05;
+  letter-spacing: -0.02em;
+  color: var(--ink);
+  margin-bottom: 2rem;
+  font-variation-settings: 'opsz' 144;
+}
+
+.hero h1 em {
+  font-style: italic;
+  font-weight: 400;
+  color: var(--accent-deep);
+}
+
+.hero-lede {
+  font-family: var(--serif);
+  font-size: clamp(1.05rem, 1.6vw, 1.25rem);
+  line-height: 1.6;
+  color: var(--ink-soft);
+  max-width: 560px;
+  font-weight: 300;
+  font-style: italic;
+}
+
+.hero-scroll {
+  position: absolute;
+  bottom: 2.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  opacity: 0.7;
+  z-index: 2;
+}
+
+.hero-scroll::after {
+  content: '';
+  width: 1px;
+  height: 32px;
+  background: var(--ink-soft);
+  animation: drop 2.4s ease-in-out infinite;
+}
+
+@keyframes drop {
+  0%, 100% { transform: scaleY(0.3); transform-origin: top; }
+  50% { transform: scaleY(1); transform-origin: top; }
+}
+
+/* ====== SECTIONS ====== */
+section {
+  padding: 6rem 0;
+  border-top: 1px solid var(--rule);
+}
+
+.section-meta {
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+  margin-bottom: 1.25rem;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.section-meta::before {
+  content: '';
+  width: 24px;
+  height: 1px;
+  background: var(--ink-faint);
+}
+
+h2 {
+  font-family: var(--serif);
+  font-weight: 400;
+  font-size: clamp(2rem, 4vw, 2.8rem);
+  line-height: 1.1;
+  letter-spacing: -0.015em;
+  margin-bottom: 1.5rem;
+  color: var(--ink);
+  font-variation-settings: 'opsz' 144;
+}
+
+h2 em {
+  font-style: italic;
+  font-weight: 300;
+  color: var(--accent-deep);
+}
+
+h3 {
+  font-family: var(--serif);
+  font-weight: 500;
+  font-size: 1.25rem;
+  line-height: 1.3;
+  margin-bottom: 0.5rem;
+  color: var(--ink);
+}
+
+p {
+  font-size: 1.05rem;
+  line-height: 1.75;
+  color: var(--ink-soft);
+  margin-bottom: 1.25rem;
+  max-width: 640px;
+}
+
+p strong {
+  color: var(--ink);
+  font-weight: 500;
+}
+
+p em {
+  font-family: var(--serif);
+  font-style: italic;
+  color: var(--ink);
+  font-weight: 400;
+}
+
+.lede {
+  font-family: var(--serif);
+  font-size: 1.25rem;
+  font-weight: 300;
+  line-height: 1.6;
+  font-style: italic;
+  color: var(--ink-soft);
+  max-width: 600px;
+}
+
+/* ====== STEP 1: FIELD ====== */
+.field-wrap {
+  position: relative;
+  margin: 2.5rem 0 1.5rem;
+  border-radius: 4px;
+  overflow: hidden;
+  box-shadow: 0 1px 0 rgba(0,0,0,0.05), 0 30px 60px -30px rgba(31,33,24,0.25);
+}
+
+.field-wrap canvas {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.hot {
+  position: absolute;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: rgba(253, 251, 246, 0.85);
+  border: 1.5px solid var(--warm);
+  cursor: pointer;
+  transform: translate(-50%, -50%);
+  padding: 0;
+  transition: transform 0.2s ease, background 0.2s ease, box-shadow 0.2s ease;
+  z-index: 2;
+}
+
+.hot::before {
+  content: '';
+  position: absolute;
+  inset: -8px;
+  border-radius: 50%;
+  border: 1px solid var(--warm);
+  opacity: 0.4;
+  animation: pulse 2s ease-out infinite;
+}
+
+@keyframes pulse {
+  0% { transform: scale(0.8); opacity: 0.6; }
+  100% { transform: scale(1.4); opacity: 0; }
+}
+
+.hot:hover {
+  transform: translate(-50%, -50%) scale(1.15);
+  background: var(--bg-card);
+}
+
+.hot.tapped {
+  background: var(--warm);
+  border-color: var(--warm);
+}
+
+.hot.tapped::before {
+  display: none;
+}
+
+.reveals {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 1.5rem;
+}
+
+.reveal-card {
+  background: var(--bg-card);
+  border: 1px solid var(--rule);
+  border-left: 3px solid var(--warm);
+  border-radius: 2px;
+  padding: 1.25rem 1.5rem;
+  opacity: 0;
+  transform: translateY(8px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.reveal-card.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.reveal-card h4 {
+  font-family: var(--serif);
+  font-size: 1.1rem;
+  font-weight: 500;
+  margin-bottom: 0.4rem;
+}
+
+.reveal-card p {
+  font-size: 0.95rem;
+  margin: 0;
+}
+
+/* ====== STEP 2: PROBLEMS ====== */
+.problems {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  margin-top: 2rem;
+}
+
+.problem {
+  background: var(--bg-card);
+  border: 1px solid var(--rule);
+  border-radius: 2px;
+  padding: 2rem;
+  display: grid;
+  grid-template-columns: 60px 1fr;
+  gap: 1.5rem;
+  align-items: start;
+}
+
+.problem-mark {
+  font-family: var(--serif);
+  font-style: italic;
+  font-weight: 300;
+  font-size: 2rem;
+  color: var(--warm);
+  line-height: 1;
+}
+
+.problem h3 {
+  margin-bottom: 0.6rem;
+}
+
+.problem p {
+  font-size: 0.98rem;
+  margin-bottom: 0;
+}
+
+/* ====== STEP 3: SLIDER ====== */
+.slider-section {
+  background: var(--bg-deep);
+  margin: 0 -1.5rem;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+}
+
+.slider-wrap {
+  position: relative;
+  margin: 2.5rem 0 1.5rem;
+  border-radius: 4px;
+  overflow: hidden;
+  box-shadow: 0 1px 0 rgba(0,0,0,0.05), 0 30px 60px -30px rgba(31,33,24,0.25);
+}
+
+.slider-wrap canvas {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.slider-controls {
+  margin: 1.5rem 0;
+}
+
+.slider-labels {
+  display: flex;
+  justify-content: space-between;
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+  margin-bottom: 8px;
+}
+
+input[type="range"] {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 100%;
+  height: 4px;
+  background: rgba(31,33,24,0.18);
+  border-radius: 2px;
+  outline: none;
+  cursor: pointer;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 22px;
+  height: 22px;
+  background: var(--accent-deep);
+  border-radius: 50%;
+  cursor: grab;
+  border: 3px solid var(--bg-card);
+  box-shadow: 0 2px 8px rgba(31,33,24,0.2);
+  transition: transform 0.15s ease;
+}
+
+input[type="range"]::-webkit-slider-thumb:active {
+  cursor: grabbing;
+  transform: scale(1.1);
+}
+
+input[type="range"]::-moz-range-thumb {
+  width: 22px;
+  height: 22px;
+  background: var(--accent-deep);
+  border-radius: 50%;
+  cursor: grab;
+  border: 3px solid var(--bg-card);
+  box-shadow: 0 2px 8px rgba(31,33,24,0.2);
+}
+
+.stage-label {
+  text-align: center;
+  font-family: var(--serif);
+  font-size: 1.1rem;
+  font-style: italic;
+  font-weight: 400;
+  color: var(--ink);
+  margin-top: 1rem;
+}
+
+.metrics {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+  margin: 1.5rem 0;
+}
+
+@media (min-width: 600px) {
+  .metrics {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.metric {
+  background: var(--bg-card);
+  border: 1px solid var(--rule);
+  border-radius: 2px;
+  padding: 1.1rem 1.25rem;
+}
+
+.metric-label {
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+  margin-bottom: 6px;
+}
+
+.metric-value {
+  font-family: var(--serif);
+  font-size: 1.7rem;
+  font-weight: 400;
+  color: var(--ink);
+  line-height: 1.1;
+  font-variation-settings: 'opsz' 144;
+}
+
+.metric-note {
+  font-size: 11px;
+  color: var(--ink-faint);
+  margin-top: 4px;
+  font-style: italic;
+}
+
+.caption-box {
+  background: var(--bg-card);
+  border: 1px solid var(--rule);
+  border-left: 3px solid var(--accent);
+  border-radius: 2px;
+  padding: 1.5rem 1.75rem;
+}
+
+.caption-box p {
+  font-family: var(--serif);
+  font-size: 1.05rem;
+  font-weight: 300;
+  font-style: italic;
+  line-height: 1.7;
+  margin: 0;
+  color: var(--ink);
+}
+
+/* ====== STEP 4: CREATURES ====== */
+.creatures {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+  margin-top: 2.5rem;
+}
+
+@media (min-width: 600px) {
+  .creatures {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 900px) {
+  .creatures {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.creature {
+  background: var(--bg-card);
+  border: 1px solid var(--rule);
+  border-radius: 2px;
+  padding: 1.5rem;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.creature:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 30px -12px rgba(31,33,24,0.18);
+}
+
+.creature-icon {
+  width: 56px;
+  height: 56px;
+  margin-bottom: 1rem;
+}
+
+.creature h3 {
+  font-size: 1.15rem;
+  margin-bottom: 0.3rem;
+}
+
+.creature p {
+  font-size: 0.92rem;
+  margin: 0;
+  line-height: 1.6;
+}
+
+/* ====== STEP 5: TABLE ====== */
+.tables {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.25rem;
+  margin: 2.5rem 0 1.5rem;
+}
+
+@media (min-width: 700px) {
+  .tables {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.table-card {
+  background: var(--bg-card);
+  border: 1px solid var(--rule);
+  border-radius: 2px;
+  padding: 1.75rem;
+}
+
+.table-card.after {
+  background: #f1efdc;
+  border-color: rgba(74, 106, 37, 0.3);
+}
+
+.table-card-label {
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+  margin-bottom: 1rem;
+}
+
+.table-card.after .table-card-label {
+  color: var(--accent-deep);
+}
+
+.table-card ul {
+  list-style: none;
+  font-family: var(--serif);
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 2;
+  color: var(--ink);
+}
+
+.table-card.after ul {
+  color: var(--accent-deep);
+}
+
+.table-card-summary {
+  margin-top: 1rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--rule);
+  font-size: 0.85rem;
+  font-style: italic;
+  color: var(--ink-faint);
+}
+
+.table-card.after .table-card-summary {
+  color: var(--accent);
+  border-top-color: rgba(74, 106, 37, 0.2);
+}
+
+.closing {
+  background: var(--bg-deep);
+  padding: 2.5rem;
+  border-radius: 2px;
+  margin-top: 2rem;
+}
+
+.closing p {
+  font-family: var(--serif);
+  font-size: 1.15rem;
+  font-weight: 300;
+  font-style: italic;
+  line-height: 1.7;
+  color: var(--ink);
+  margin-bottom: 1rem;
+}
+
+.closing p:last-child {
+  margin-bottom: 0;
+}
+
+.closing p strong {
+  font-style: normal;
+  font-weight: 500;
+  color: var(--accent-deep);
+}
+
+/* ====== FOOTER ====== */
+footer {
+  padding: 4rem 1.5rem 3rem;
+  border-top: 1px solid var(--rule);
+  text-align: center;
+}
+
+footer p {
+  font-size: 0.9rem;
+  color: var(--ink-faint);
+  margin: 0 auto 0.5rem;
+  max-width: 500px;
+}
+
+footer .signature {
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: 1.05rem;
+  color: var(--ink-soft);
+  margin-top: 1.5rem;
+}
+
+/* ====== RESPONSIVE ====== */
+@media (max-width: 600px) {
+  .hero { padding: 3rem 1.25rem 5rem; }
+  section { padding: 4rem 0; }
+  .container, .container-wide { padding: 0 1.25rem; }
+  .problem {
+    grid-template-columns: 1fr;
+    gap: 0.75rem;
+    padding: 1.5rem;
+  }
+  .problem-mark { font-size: 1.5rem; }
+  .closing { padding: 1.75rem; }
+  .closing p { font-size: 1rem; }
+  .table-card { padding: 1.25rem; }
+}
+</style>
+</head>
+<body>
+
+<!-- ============ HERO ============ -->
+<section class="hero">
+  <div class="hero-grain"></div>
+  <svg class="hero-hills" viewBox="0 0 1200 400" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M0,200 C200,140 400,180 600,150 C800,120 1000,170 1200,140 L1200,400 L0,400 Z" fill="#a89868" opacity="0.55"/>
+    <path d="M0,260 C150,210 350,250 550,220 C750,190 950,240 1200,210 L1200,400 L0,400 Z" fill="#8a7a4a" opacity="0.6"/>
+    <path d="M0,320 C200,290 400,310 600,290 C800,270 1000,300 1200,280 L1200,400 L0,400 Z" fill="#6a5a30" opacity="0.5"/>
+  </svg>
+
+  <div class="hero-content">
+    <div class="hero-eyebrow">A vision for restored farming</div>
+    <h1>The land was always <em>carrying more</em> — we just couldn't count it.</h1>
+    <p class="hero-lede">A walk through the future of food, where Dorset's wheat fields become wood-pasture mosaics and gentle creatures bring in the harvest one fruit, one mushroom, one handful at a time.</p>
+  </div>
+
+  <div class="hero-scroll">scroll to begin</div>
+</section>
+
+<!-- ============ STEP 1: LOOK AT THIS FIELD ============ -->
+<section>
+  <div class="container">
+    <div class="section-meta">One — start here</div>
+    <h2>Look at this field.</h2>
+    <p>A wheat field in Dorset. Maybe you've driven past one a hundred times. It looks peaceful. Productive. Like the countryside is supposed to look.</p>
+    <p><strong>Tap each circle.</strong> Look closer.</p>
+
+    <div class="field-wrap">
+      <canvas id="field" width="680" height="240"></canvas>
+      <button class="hot" data-r="soil" style="left: 20%; top: 76%;" aria-label="Soil"></button>
+      <button class="hot" data-r="silence" style="left: 50%; top: 26%;" aria-label="Silence"></button>
+      <button class="hot" data-r="hedge" style="left: 84%; top: 56%;" aria-label="Missing hedge"></button>
+      <button class="hot" data-r="invisible" style="left: 35%; top: 60%;" aria-label="Invisible chemicals"></button>
+    </div>
+
+    <div id="reveals" class="reveals"></div>
+  </div>
+</section>
+
+<!-- ============ STEP 2: WHY IT ISN'T WORKING ============ -->
+<section>
+  <div class="container">
+    <div class="section-meta">Two — three things gone wrong</div>
+    <h2>Why it isn't <em>working</em>.</h2>
+    <p>Modern farming feeds the world by doing one thing extraordinarily well: growing a single crop on a huge area. That trick has costs. Three of them matter for what comes next.</p>
+
+    <div class="problems">
+      <div class="problem">
+        <div class="problem-mark">i.</div>
+        <div>
+          <h3>The soil is dying</h3>
+          <p>A handful of healthy soil contains more living things than there are people on Earth — fungi, bacteria, worms, mites. They make plants possible. Tilling, ploughing, and chemical sprays kill most of them. Dorset's topsoil is now <strong>six inches shallower</strong> than it was forty years ago. At current rates, much of England's farm soil has perhaps sixty harvests left in it.</p>
+        </div>
+      </div>
+      <div class="problem">
+        <div class="problem-mark">ii.</div>
+        <div>
+          <h3>The water carries the cost</h3>
+          <p>Fertilisers and pesticides don't stay where they're sprayed. They run into streams — including Dorset's chalk streams, among the rarest freshwater habitats on Earth. Many are now silted, algae-choked, and nearly lifeless. The salmon and trout your grandparents fished are gone from places they thrived for a thousand years.</p>
+        </div>
+      </div>
+      <div class="problem">
+        <div class="problem-mark">iii.</div>
+        <div>
+          <h3>Your food got narrower</h3>
+          <p>Three crops — wheat, rice, corn — provide nearly half of all human calories. Your supermarket has thousands of products built from the same dozen plants and the meat of a few breeds bred for industrial scale. Wild foods that fed people for thousands of years — hazelnuts, wild garlic, blackberries, mushrooms, watercress — are now luxuries or curiosities. <em>Not because they don't grow well, but because no machine can pick them.</em></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ STEP 3: SLIDER ============ -->
+<section class="slider-section">
+  <div class="container">
+    <div class="section-meta">Three — what if</div>
+    <h2>What if we let it <em>go wild</em>?</h2>
+    <p>There's a counter-intuitive truth about land: <strong>the wilder it gets, the more food it carries.</strong> Not less. More. The wheat field grows one thing. A wood-pasture mosaic grows a hundred. Drag the slider — the same thousand acres, transforming.</p>
+
+    <div class="slider-wrap">
+      <canvas id="land" width="680" height="280"></canvas>
+    </div>
+
+    <div class="slider-controls">
+      <div class="slider-labels">
+        <span>Wheat prairie</span>
+        <span>Hedges return</span>
+        <span>Wood pasture</span>
+        <span>Wild mosaic</span>
+      </div>
+      <input type="range" min="0" max="100" value="0" id="wild" step="1">
+      <div class="stage-label" id="stage-label">Today: intensive arable & dairy</div>
+    </div>
+
+    <div class="metrics">
+      <div class="metric">
+        <div class="metric-label">Annual food</div>
+        <div class="metric-value" id="cal">2.4B cal</div>
+        <div class="metric-note" id="cal-delta">baseline</div>
+      </div>
+      <div class="metric">
+        <div class="metric-label">People fed</div>
+        <div class="metric-value" id="people">3,300</div>
+        <div class="metric-note" id="people-note">on commodity grain</div>
+      </div>
+      <div class="metric">
+        <div class="metric-label">Edible kinds</div>
+        <div class="metric-value" id="spec">2</div>
+        <div class="metric-note" id="spec-note">wheat & dairy</div>
+      </div>
+      <div class="metric">
+        <div class="metric-label">Living creatures</div>
+        <div class="metric-value" id="hab">few</div>
+        <div class="metric-note" id="hab-note">sprayed crop</div>
+      </div>
+    </div>
+
+    <div class="caption-box">
+      <p id="caption-text"></p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ STEP 4: CREATURES ============ -->
+<section>
+  <div class="container">
+    <div class="section-meta">Four — the unlock</div>
+    <h2>But how do we <em>pick it</em>?</h2>
+    <p>This is the question that's stopped wild farming for a hundred years. A combine harvester needs a flat field of identical plants — one species, one height, one ripeness. A food forest is the opposite: every plant a different kind, ripening at a different time, hidden under leaves and in soil. Until now there was only one way to harvest it: by hand, slowly. So we never did, at scale.</p>
+    <p><strong>What changes now:</strong> small, gentle creatures — shaped after the wild ones whose work they share — that can pick one fruit, one mushroom, one handful at a time. You speak to them. They listen. They bring the harvest in.</p>
+
+    <div class="creatures">
+      <div class="creature">
+        <svg class="creature-icon" viewBox="0 0 56 56" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <ellipse cx="28" cy="32" rx="11" ry="8" fill="#c89030" stroke="#7a5418" stroke-width="1.5"/>
+          <path d="M22 28 Q18 22 14 24" stroke="#7a5418" stroke-width="1.2" fill="none"/>
+          <path d="M34 28 Q38 22 42 24" stroke="#7a5418" stroke-width="1.2" fill="none"/>
+          <ellipse cx="20" cy="22" rx="6" ry="3" fill="#fff" opacity="0.7"/>
+          <ellipse cx="36" cy="22" rx="6" ry="3" fill="#fff" opacity="0.7"/>
+          <line x1="20" y1="32" x2="36" y2="32" stroke="#7a5418" stroke-width="0.8"/>
+          <circle cx="22" cy="35" r="0.8" fill="#7a5418"/>
+          <circle cx="28" cy="35" r="0.8" fill="#7a5418"/>
+          <circle cx="34" cy="35" r="0.8" fill="#7a5418"/>
+        </svg>
+        <h3>Bumble</h3>
+        <p>Bee-sized. Pollinates flowers and harvests soft fruit one berry at a time. Defers to every wild bee it meets.</p>
+      </div>
+      <div class="creature">
+        <svg class="creature-icon" viewBox="0 0 56 56" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <ellipse cx="28" cy="32" rx="13" ry="9" fill="#3a3833" stroke="#1a1a17" stroke-width="1.5"/>
+          <ellipse cx="38" cy="26" rx="6" ry="5" fill="#3a3833" stroke="#1a1a17" stroke-width="1.5"/>
+          <path d="M40 23 L46 20" stroke="#1a1a17" stroke-width="1.5" stroke-linecap="round"/>
+          <circle cx="40" cy="25" r="1.2" fill="#d4a830"/>
+          <path d="M22 28 Q14 24 12 18" stroke="#1a1a17" stroke-width="1" fill="none"/>
+          <path d="M22 32 Q14 36 10 38" stroke="#1a1a17" stroke-width="1" fill="none"/>
+        </svg>
+        <h3>Crow</h3>
+        <p>Magpie-sized. Gathers nuts and grain heads. Knows around 600 words. Brings small gifts home.</p>
+      </div>
+      <div class="creature">
+        <svg class="creature-icon" viewBox="0 0 56 56" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <ellipse cx="28" cy="32" rx="14" ry="9" fill="#5a3a2a" stroke="#2e1a10" stroke-width="1.5"/>
+          <path d="M14 32 L8 30" stroke="#2e1a10" stroke-width="1.5" stroke-linecap="round"/>
+          <ellipse cx="42" cy="30" rx="4" ry="3" fill="#a07050"/>
+          <circle cx="40" cy="29" r="0.8" fill="#1a1a17"/>
+          <circle cx="44" cy="29" r="0.8" fill="#1a1a17"/>
+          <path d="M22 38 Q28 44 34 38" stroke="#2e1a10" stroke-width="1.2" fill="none"/>
+        </svg>
+        <h3>Mole</h3>
+        <p>Burrows along fungal networks without breaking them. Lifts a single carrot when asked.</p>
+      </div>
+      <div class="creature">
+        <svg class="creature-icon" viewBox="0 0 56 56" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <ellipse cx="24" cy="32" rx="9" ry="6" fill="#a06038" stroke="#5a2e10" stroke-width="1.5"/>
+          <ellipse cx="34" cy="28" rx="5" ry="4" fill="#a06038" stroke="#5a2e10" stroke-width="1.5"/>
+          <path d="M22 38 Q14 44 8 50 Q14 48 18 42" fill="#a06038" stroke="#5a2e10" stroke-width="1.2"/>
+          <path d="M30 42 Q26 50 22 52" stroke="#5a2e10" stroke-width="1" fill="none"/>
+          <path d="M16 36 Q14 42 14 48" stroke="#5a2e10" stroke-width="1" fill="none"/>
+          <circle cx="36" cy="27" r="0.7" fill="#1a1a17"/>
+        </svg>
+        <h3>Squirrel</h3>
+        <p>Climbs anything. Tests every apple for ripeness with a soft probe before twisting it free.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ STEP 5: TABLE ============ -->
+<section>
+  <div class="container">
+    <div class="section-meta">Five — your kitchen</div>
+    <h2>What's on your <em>table</em> now?</h2>
+    <p>Forget the hectares and the carbon for a moment. This is what the shift means for the food you actually eat — for one person, in one week.</p>
+
+    <div class="tables">
+      <div class="table-card">
+        <div class="table-card-label">Today</div>
+        <ul>
+          <li>Sliced bread</li>
+          <li>Pasta</li>
+          <li>Industrial milk</li>
+          <li>Chicken breast</li>
+          <li>Iceberg lettuce</li>
+          <li>Banana</li>
+          <li>Apple — one variety</li>
+        </ul>
+        <div class="table-card-summary">Roughly 12 species. 8 from far away.</div>
+      </div>
+      <div class="table-card after">
+        <div class="table-card-label">After</div>
+        <ul>
+          <li>Sourdough from heritage wheat</li>
+          <li>Longhorn beef from wood pasture</li>
+          <li>Wild garlic & nettle pesto</li>
+          <li>Watercress from a chalk stream</li>
+          <li>Hazelnuts, walnuts, sweet chestnuts</li>
+          <li>Six apple varieties, four pear</li>
+          <li>Morels, chanterelles, blackberries</li>
+          <li>Raw milk, eggs, honey</li>
+        </ul>
+        <div class="table-card-summary">Roughly 80 species. All from within 30 miles.</div>
+      </div>
+    </div>
+
+    <div class="closing">
+      <p>More food. More variety. Better food. Land that's getting <strong>richer instead of poorer</strong>. Animals living lives worth living. Streams full of fish again. And a creature called Wren who'll bring you wild garlic when you ask, because she's been listening from the hawthorn since dawn.</p>
+      <p>This isn't a fantasy of a smaller, simpler life. It's a fantasy of a <strong>more abundant one</strong>. The land was always carrying more. We're just finally going to be able to count it — and pick it — and share it.</p>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <p>A vision in progress. Built with care, on chalk-grassland colours.</p>
+  <p class="signature">— for everyone who ever wondered why the hedgerow was gone</p>
+</footer>
+
+<script>
+// ===== STEP 1: FIELD CANVAS =====
+(function(){
+  const fieldCanvas = document.getElementById('field');
+  if(!fieldCanvas) return;
+  const fctx = fieldCanvas.getContext('2d');
+
+  function mulberry32(a){return function(){a|=0;a=a+0x6D2B79F5|0;let t=Math.imul(a^a>>>15,1|a);t=t+Math.imul(t^t>>>7,61|t)^t;return((t^t>>>14)>>>0)/4294967296}}
+
+  function drawField(){
+    fctx.clearRect(0,0,680,240);
+    const sg = fctx.createLinearGradient(0,0,0,90);
+    sg.addColorStop(0, '#c8d4dc');
+    sg.addColorStop(1, '#dcdfd8');
+    fctx.fillStyle = sg;
+    fctx.fillRect(0,0,680,90);
+    fctx.fillStyle = '#b8c0b0';
+    fctx.beginPath();
+    fctx.moveTo(0,90);
+    fctx.bezierCurveTo(150, 65, 350, 78, 680, 70);
+    fctx.lineTo(680,90); fctx.lineTo(0,90); fctx.fill();
+    const fg = fctx.createLinearGradient(0,90,0,240);
+    fg.addColorStop(0, '#c8b074');
+    fg.addColorStop(1, '#a08648');
+    fctx.fillStyle = fg;
+    fctx.fillRect(0,90,680,150);
+    fctx.strokeStyle = 'rgba(110,85,50,0.4)';
+    fctx.lineWidth = 0.5;
+    for(let y=100; y<240; y+=7){
+      fctx.beginPath(); fctx.moveTo(0,y); fctx.lineTo(680,y); fctx.stroke();
+    }
+    fctx.strokeStyle = 'rgba(170,140,75,0.65)';
+    fctx.lineWidth = 0.4;
+    const rr = mulberry32(11);
+    for(let i=0;i<1800;i++){
+      const x = rr()*680, y = 100 + rr()*140, h = 6 + rr()*4;
+      fctx.beginPath(); fctx.moveTo(x,y); fctx.lineTo(x,y-h); fctx.stroke();
+    }
+    fctx.fillStyle = 'rgba(220,195,130,0.85)';
+    const rr2 = mulberry32(11);
+    for(let i=0;i<1800;i++){
+      const x = rr2()*680, y = 100 + rr2()*140, h = 6 + rr2()*4;
+      fctx.beginPath(); fctx.ellipse(x, y-h, 0.7, 1.8, 0, 0, Math.PI*2); fctx.fill();
+    }
+  }
+  drawField();
+
+  const reveals = {
+    soil: { t: 'The soil under your feet', b: "Looks rich. Isn't. The plough turns it over twice a year, killing the fungal threads that connect plant roots and store carbon. What looks like dirt is mostly mineral dust held together by chemistry, not biology." },
+    silence: { t: 'Listen', b: "Notice what's missing? No skylarks. No yellowhammers. No insect hum. A field of wheat is one of the quietest places in the British countryside, because almost nothing else can live here." },
+    hedge: { t: 'The missing hedgerow', b: "Until the 1950s, this field was probably four smaller fields divided by hedges. Government grants paid farmers to rip them out — half a million miles of them, gone. Each hedge fed dozens of species and produced food of its own: sloes, elderberries, hazelnuts, blackberries." },
+    invisible: { t: "What you can't see", b: "This field gets sprayed perhaps a dozen times a year — fungicides, herbicides, insecticides, growth regulators. Most of it ends up in the soil and the streams. None of it makes the food more nutritious. Much of it makes it less so." }
+  };
+
+  const revealEl = document.getElementById('reveals');
+  document.querySelectorAll('.hot').forEach(btn => {
+    btn.addEventListener('click', () => {
+      if(btn.classList.contains('tapped')) return;
+      btn.classList.add('tapped');
+      const r = reveals[btn.dataset.r];
+      const card = document.createElement('div');
+      card.className = 'reveal-card';
+      card.innerHTML = '<h4>' + r.t + '</h4><p>' + r.b + '</p>';
+      revealEl.appendChild(card);
+      requestAnimationFrame(() => {
+        requestAnimationFrame(() => card.classList.add('show'));
+      });
+    });
+  });
+})();
+
+// ===== STEP 3: SLIDER CANVAS =====
+(function(){
+  const wildEl = document.getElementById('wild');
+  if(!wildEl) return;
+  const calEl = document.getElementById('cal');
+  const calDelta = document.getElementById('cal-delta');
+  const peopleEl = document.getElementById('people');
+  const peopleNote = document.getElementById('people-note');
+  const specEl = document.getElementById('spec');
+  const specNote = document.getElementById('spec-note');
+  const habEl = document.getElementById('hab');
+  const habNote = document.getElementById('hab-note');
+  const stageLabel = document.getElementById('stage-label');
+  const captionText = document.getElementById('caption-text');
+  const canvas = document.getElementById('land');
+  const ctx = canvas.getContext('2d');
+
+  function mulberry32(a){return function(){a|=0;a=a+0x6D2B79F5|0;let t=Math.imul(a^a>>>15,1|a);t=t+Math.imul(t^t>>>7,61|t)^t;return((t^t>>>14)>>>0)/4294967296}}
+
+  const r1 = mulberry32(7);
+  const wheatStems = [];
+  for(let i=0;i<2000;i++) wheatStems.push({ x: r1()*680, y: 110 + r1()*170, h: 5 + r1()*4 });
+
+  const r2 = mulberry32(23);
+  const flowers = [];
+  for(let i=0;i<800;i++) flowers.push({
+    x: r2()*680, y: 110 + r2()*170,
+    sp: Math.floor(r2()*7),
+    sz: 1.2 + r2()*2.2,
+    th: 0.08 + r2()*0.5
+  });
+
+  const r3 = mulberry32(41);
+  const shrubs = [];
+  for(let i=0;i<80;i++) shrubs.push({
+    x: r3()*680, y: 130 + r3()*150,
+    sz: 5 + r3()*7,
+    sp: Math.floor(r3()*4),
+    th: 0.18 + r3()*0.45
+  });
+
+  const r4 = mulberry32(89);
+  const trees = [];
+  for(let i=0;i<24;i++) trees.push({
+    x: r4()*680, y: 140 + r4()*135,
+    sp: Math.floor(r4()*5),
+    sz: 16 + r4()*14,
+    th: 0.35 + r4()*0.45
+  });
+
+  const r5 = mulberry32(127);
+  const animals = [];
+  for(let i=0;i<6;i++) animals.push({ x: 60 + r5()*560, y: 180 + r5()*90, k: 'cattle', th: 0.22 + r5()*0.12 });
+  for(let i=0;i<4;i++) animals.push({ x: r5()*680, y: 195 + r5()*80, k: 'pig', th: 0.45 + r5()*0.15 });
+  for(let i=0;i<3;i++) animals.push({ x: r5()*680, y: 175 + r5()*100, k: 'deer', th: 0.6 + r5()*0.15 });
+  for(let i=0;i<3;i++) animals.push({ x: r5()*680, y: 185 + r5()*85, k: 'pony', th: 0.5 + r5()*0.18 });
+  for(let i=0;i<14;i++) animals.push({ x: r5()*680, y: 50 + r5()*60, k: 'bird', th: 0.18 + r5()*0.45 });
+
+  function lerp(a,b,t){ return a + (b-a)*t; }
+  function lc(c1,c2,t){ return [Math.round(lerp(c1[0],c2[0],t)), Math.round(lerp(c1[1],c2[1],t)), Math.round(lerp(c1[2],c2[2],t))]; }
+
+  function drawCattle(x,y,o){
+    ctx.globalAlpha = o;
+    ctx.fillStyle = '#7a4a2a';
+    ctx.fillRect(x-7,y-3,14,6);
+    ctx.fillRect(x+5,y-2,4,4);
+    ctx.fillRect(x-6,y+3,1.5,4); ctx.fillRect(x+4,y+3,1.5,4);
+    ctx.strokeStyle = '#d4c4a0'; ctx.lineWidth = 1;
+    ctx.beginPath();
+    ctx.moveTo(x+8,y-2); ctx.lineTo(x+12,y-4);
+    ctx.moveTo(x+8,y-2); ctx.lineTo(x+12,y); ctx.stroke();
+    ctx.globalAlpha = 1;
+  }
+  function drawPig(x,y,o){
+    ctx.globalAlpha = o;
+    ctx.fillStyle = '#a04a28';
+    ctx.fillRect(x-5,y-2,10,4); ctx.fillRect(x+4,y-1,2.5,3);
+    ctx.fillRect(x-4,y+2,1.2,3); ctx.fillRect(x+3,y+2,1.2,3);
+    ctx.globalAlpha = 1;
+  }
+  function drawDeer(x,y,o){
+    ctx.globalAlpha = o;
+    ctx.fillStyle = '#9a6b3f';
+    ctx.fillRect(x-3,y-2,8,4); ctx.fillRect(x+4,y-3,1.5,3);
+    ctx.fillRect(x-2,y+2,0.8,4); ctx.fillRect(x+3,y+2,0.8,4);
+    ctx.strokeStyle = '#5a3a1a'; ctx.lineWidth = 0.7;
+    ctx.beginPath();
+    ctx.moveTo(x+4.5,y-3); ctx.lineTo(x+5,y-6);
+    ctx.moveTo(x+4.5,y-3); ctx.lineTo(x+6,y-5); ctx.stroke();
+    ctx.globalAlpha = 1;
+  }
+  function drawPony(x,y,o){
+    ctx.globalAlpha = o;
+    ctx.fillStyle = '#5a4030';
+    ctx.fillRect(x-6,y-3,12,5); ctx.fillRect(x+5,y-4,2,4);
+    ctx.fillRect(x-5,y+2,1.2,4); ctx.fillRect(x+4,y+2,1.2,4);
+    ctx.globalAlpha = 1;
+  }
+  function drawBird(x,y,o){
+    ctx.globalAlpha = o;
+    ctx.strokeStyle = '#444'; ctx.lineWidth = 1;
+    ctx.beginPath();
+    ctx.moveTo(x-3,y); ctx.quadraticCurveTo(x,y-2,x+3,y); ctx.stroke();
+    ctx.globalAlpha = 1;
+  }
+
+  const flowerColors = ['#e8b4d8','#f0d860','#c890e0','#ffffff','#e88a6a','#a8c878','#6a8ad8'];
+  const shrubColors = ['#5a7838','#6a8848','#7a8055','#5a6838'];
+  const treeColors = ['#4a6a25','#5a7530','#6a8540','#506830','#788a45'];
+
+  function draw(t){
+    ctx.clearRect(0,0,680,280);
+
+    const skT = lc([198,208,215],[160,195,220],t);
+    const skB = lc([220,222,218],[200,218,228],t);
+    const sg = ctx.createLinearGradient(0,0,0,108);
+    sg.addColorStop(0, 'rgb('+skT[0]+','+skT[1]+','+skT[2]+')');
+    sg.addColorStop(1, 'rgb('+skB[0]+','+skB[1]+','+skB[2]+')');
+    ctx.fillStyle = sg; ctx.fillRect(0,0,680,108);
+
+    ctx.fillStyle = 'rgba(178,188,175,'+(0.55+t*0.25)+')';
+    ctx.beginPath();
+    ctx.moveTo(0,108);
+    ctx.bezierCurveTo(120,75,240,90,360,80);
+    ctx.bezierCurveTo(480,68,600,85,680,75);
+    ctx.lineTo(680,108); ctx.lineTo(0,108); ctx.fill();
+
+    ctx.fillStyle = 'rgba(150,165,140,'+(0.6+t*0.2)+')';
+    ctx.beginPath();
+    ctx.moveTo(0,108);
+    ctx.bezierCurveTo(80,100,200,106,320,102);
+    ctx.bezierCurveTo(440,96,560,106,680,100);
+    ctx.lineTo(680,108); ctx.lineTo(0,108); ctx.fill();
+
+    const grT = lc([200,180,135],[105,140,80],t);
+    const grB = lc([170,148,105],[70,105,55],t);
+    const ggr = ctx.createLinearGradient(0,108,0,280);
+    ggr.addColorStop(0, 'rgb('+grT[0]+','+grT[1]+','+grT[2]+')');
+    ggr.addColorStop(1, 'rgb('+grB[0]+','+grB[1]+','+grB[2]+')');
+    ctx.fillStyle = ggr; ctx.fillRect(0,108,680,172);
+
+    if(t < 0.45){
+      const a = (1 - t/0.45) * 0.55;
+      ctx.strokeStyle = 'rgba(115,90,55,'+a+')';
+      ctx.lineWidth = 1.2;
+      ctx.beginPath();
+      ctx.moveTo(0,165); ctx.lineTo(680,162);
+      ctx.moveTo(0,225); ctx.lineTo(680,228);
+      ctx.moveTo(220,108); ctx.lineTo(225,280);
+      ctx.moveTo(450,108); ctx.lineTo(455,280);
+      ctx.stroke();
+    }
+
+    if(t < 0.5){
+      const a = (1 - t/0.5) * 0.45;
+      ctx.strokeStyle = 'rgba(140,110,70,'+a+')';
+      ctx.lineWidth = 0.5;
+      for(let y=120;y<280;y+=7){
+        ctx.beginPath(); ctx.moveTo(0,y); ctx.lineTo(680,y); ctx.stroke();
+      }
+    }
+
+    if(t < 0.5){
+      const a = 1 - t/0.5;
+      ctx.strokeStyle = 'rgba(178,152,88,'+(a*0.72)+')';
+      ctx.lineWidth = 0.4;
+      wheatStems.forEach(s => {
+        ctx.beginPath();
+        ctx.moveTo(s.x, s.y);
+        ctx.lineTo(s.x, s.y - s.h);
+        ctx.stroke();
+      });
+      ctx.fillStyle = 'rgba(220,195,130,'+(a*0.85)+')';
+      wheatStems.forEach(s => {
+        ctx.beginPath();
+        ctx.ellipse(s.x, s.y - s.h, 0.7, 1.7, 0, 0, Math.PI*2);
+        ctx.fill();
+      });
+    }
+
+    flowers.forEach(f => {
+      if(t > f.th){
+        const lt = Math.min(1, (t-f.th)/0.25);
+        ctx.fillStyle = flowerColors[f.sp];
+        ctx.globalAlpha = lt * 0.85;
+        ctx.beginPath();
+        ctx.arc(f.x, f.y, f.sz * lt, 0, Math.PI*2);
+        ctx.fill();
+        ctx.globalAlpha = 1;
+      }
+    });
+
+    shrubs.forEach(s => {
+      if(t > s.th){
+        const lt = Math.min(1, (t-s.th)/0.22);
+        ctx.fillStyle = shrubColors[s.sp];
+        ctx.globalAlpha = lt * 0.9;
+        const sz = s.sz * lt;
+        ctx.beginPath();
+        ctx.arc(s.x - sz*0.3, s.y, sz*0.7, 0, Math.PI*2);
+        ctx.arc(s.x + sz*0.3, s.y, sz*0.7, 0, Math.PI*2);
+        ctx.arc(s.x, s.y - sz*0.3, sz*0.7, 0, Math.PI*2);
+        ctx.fill();
+        ctx.globalAlpha = 1;
+      }
+    });
+
+    trees.forEach(tr => {
+      if(t > tr.th){
+        const lt = Math.min(1, (t-tr.th)/0.28);
+        const sz = tr.sz * lt;
+        ctx.fillStyle = '#5a3e2a';
+        ctx.globalAlpha = lt;
+        ctx.fillRect(tr.x - 1.5, tr.y - sz*0.3, 3, sz*0.5);
+        ctx.fillStyle = treeColors[tr.sp];
+        ctx.beginPath();
+        ctx.arc(tr.x, tr.y - sz*0.3, sz*0.55, 0, Math.PI*2);
+        ctx.arc(tr.x - sz*0.3, tr.y - sz*0.15, sz*0.45, 0, Math.PI*2);
+        ctx.arc(tr.x + sz*0.3, tr.y - sz*0.15, sz*0.45, 0, Math.PI*2);
+        ctx.fill();
+        ctx.globalAlpha = 1;
+      }
+    });
+
+    animals.forEach(a => {
+      if(t > a.th){
+        const lt = Math.min(1, (t-a.th)/0.18);
+        if(a.k === 'cattle') drawCattle(a.x,a.y,lt);
+        else if(a.k === 'pig') drawPig(a.x,a.y,lt);
+        else if(a.k === 'deer') drawDeer(a.x,a.y,lt);
+        else if(a.k === 'pony') drawPony(a.x,a.y,lt);
+        else if(a.k === 'bird') drawBird(a.x,a.y,lt);
+      }
+    });
+  }
+
+  const stages = [
+    { at: 0, label: 'Today: intensive arable & dairy', cap: "A thousand acres of wheat, barley, and high-input dairy. The combine yield looks impressive — but almost all of it leaves Dorset as commodity grain. Two species feed everyone: wheat and dairy cow." },
+    { at: 22, label: 'Hedges and margins return', cap: "The hedgerows are back. Six-metre flowering margins line every field. The wheat block shrinks by a fifth, but total food rises — because hedgerow elder, sloe, hazel, blackberry, plus meat from a small herd, all start counting. Skylarks come back first. Then yellowhammers." },
+    { at: 48, label: 'Wood-pasture mosaic', cap: "Now it looks like Knepp. Longhorn cattle and Tamworth pigs roam open silvopasture; their rooting and grazing build the soil that feeds wild fruit and nut trees. Cereal continues, in strips between the trees. Chalk-grassland orchids return where the spray rigs no longer reach." },
+    { at: 75, label: 'Wood pasture and wild meadow', cap: "Beavers shape the wet ground. Red deer thin the saplings. The cattle and pigs are still here — fewer of them, but on richer pasture, producing more meat per acre than the dairy ever did. Wild garlic carpets the woodland in spring. Streams run clear enough for trout." },
+    { at: 100, label: 'Layered wild mosaic', cap: "A thousand acres of working wilderness. Food from every layer: nuts, fruit, leaves, roots, mushrooms, fish, game, free-range pork, longhorn beef, raw milk, eggs, honey. Most of it food no industrial system ever brought to market — because it ripens one fruit, one mushroom, one handful at a time. Now we can finally pick it." }
+  ];
+
+  function getStage(w){
+    let s = stages[0];
+    for(let i=0;i<stages.length;i++) if(w >= stages[i].at) s = stages[i];
+    return s;
+  }
+
+  function update(){
+    const w = parseInt(wildEl.value);
+    const t = w/100;
+    const s = getStage(w);
+    stageLabel.textContent = s.label;
+    captionText.textContent = s.cap;
+
+    let yieldBn;
+    if(t < 0.15) yieldBn = 2.4 + t * 1.5;
+    else if(t < 0.5) yieldBn = 2.6 + (t - 0.15) * 9;
+    else yieldBn = 5.75 + (t - 0.5) * 12.5;
+
+    calEl.textContent = yieldBn >= 1 ? yieldBn.toFixed(1) + 'B cal' : Math.round(yieldBn * 1000) + 'M cal';
+    const delta = ((yieldBn - 2.4) / 2.4 * 100);
+    calDelta.textContent = (delta > 0 ? '+' : '') + Math.round(delta) + '% vs today';
+
+    const people = Math.round(yieldBn * 1e9 / 730000);
+    peopleEl.textContent = people.toLocaleString();
+    if(t < 0.1) peopleNote.textContent = 'mostly commodity grain';
+    else if(t < 0.4) peopleNote.textContent = 'on a varied diet';
+    else if(t < 0.7) peopleNote.textContent = 'on real, whole foods';
+    else peopleNote.textContent = 'on a feast from every layer';
+
+    const sp = Math.max(2, Math.round(2 + t * 138));
+    specEl.textContent = sp.toLocaleString();
+    if(t < 0.1) specNote.textContent = 'wheat & dairy';
+    else if(t < 0.3) specNote.textContent = 'plus hedge fruits';
+    else if(t < 0.6) specNote.textContent = 'plus tree crops & game';
+    else specNote.textContent = 'every layer producing';
+
+    if(t < 0.1) { habEl.textContent = 'few'; habNote.textContent = 'sprayed crop'; }
+    else if(t < 0.35) { habEl.textContent = 'returning'; habNote.textContent = 'birds, insects'; }
+    else if(t < 0.7) { habEl.textContent = 'thriving'; habNote.textContent = 'mammals, fish'; }
+    else { habEl.textContent = 'abundant'; habNote.textContent = 'full food web'; }
+
+    draw(t);
+  }
+
+  wildEl.addEventListener('input', update);
+  update();
+})();
+</script>
+</body>
+</html>
