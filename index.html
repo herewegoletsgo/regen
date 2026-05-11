@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>The land was always carrying more — a vision for restored farming</title>
-<meta name="description" content="A guided walk through the future of food, where Dorset's wheat fields become wood-pasture mosaics and gentle creatures bring in the harvest one fruit at a time.">
+<meta name="description" content="A guided walk through the future of food, where Dorset's wheat fields become wood-pasture mosaics and gentle regenerative bots bring in the harvest one fruit at a time.">
 <meta property="og:title" content="The land was always carrying more">
 <meta property="og:description" content="What if the wilder land got, the more food it carried — and we just couldn't see it?">
 <meta property="og:type" content="website">
@@ -329,13 +329,18 @@ p em {
   border-radius: 2px;
   padding: 1.25rem 1.5rem;
   opacity: 0;
-  transform: translateY(8px);
+  transform: translateY(-8px);
   transition: opacity 0.5s ease, transform 0.5s ease;
 }
 
 .reveal-card.show {
   opacity: 1;
   transform: translateY(0);
+}
+
+.reveal-card.fading {
+  opacity: 0.55;
+  border-left-color: var(--ink-faint);
 }
 
 .reveal-card h4 {
@@ -348,6 +353,16 @@ p em {
 .reveal-card p {
   font-size: 0.95rem;
   margin: 0;
+}
+
+.reveal-newest-badge {
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--warm);
+  margin-bottom: 0.4rem;
+  display: inline-block;
 }
 
 /* ====== STEP 2: PROBLEMS ====== */
@@ -536,23 +551,105 @@ input[type="range"]::-moz-range-thumb {
   color: var(--ink);
 }
 
-/* ====== STEP 4: CREATURES ====== */
+/* ====== STEP 4: CREATURES (BOTS) ====== */
+.bot-intro {
+  background: var(--bg-card);
+  border: 1px solid var(--rule);
+  border-left: 3px solid var(--accent);
+  border-radius: 2px;
+  padding: 1.5rem 1.75rem;
+  margin: 2rem 0 2.5rem;
+}
+
+.bot-intro p {
+  font-family: var(--serif);
+  font-size: 1.1rem;
+  font-weight: 300;
+  font-style: italic;
+  line-height: 1.7;
+  margin: 0;
+  color: var(--ink);
+  max-width: none;
+}
+
+.bot-intro p strong {
+  font-style: normal;
+  font-weight: 500;
+  color: var(--accent-deep);
+}
+
+.bot-feature {
+  background: linear-gradient(180deg, #f1efdc 0%, #e8e4cc 100%);
+  border: 1px solid rgba(74, 106, 37, 0.3);
+  border-radius: 4px;
+  padding: 2.25rem;
+  margin: 2.5rem 0;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+}
+
+@media (min-width: 700px) {
+  .bot-feature {
+    grid-template-columns: 160px 1fr;
+    gap: 2rem;
+  }
+}
+
+.bot-feature-tag {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--accent-deep);
+  background: rgba(255,255,255,0.6);
+  padding: 4px 10px;
+  border-radius: 12px;
+}
+
+.bot-feature-icon {
+  width: 140px;
+  height: 140px;
+  margin: 0 auto;
+}
+
+.bot-feature h3 {
+  font-size: 1.5rem;
+  margin-bottom: 0.3rem;
+  color: var(--accent-deep);
+}
+
+.bot-feature .bot-feature-subtitle {
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: 0.95rem;
+  color: var(--ink-soft);
+  margin-bottom: 1rem;
+}
+
+.bot-feature p {
+  font-size: 1rem;
+  line-height: 1.7;
+  margin: 0;
+  max-width: none;
+}
+
 .creatures {
   display: grid;
   grid-template-columns: 1fr;
   gap: 1rem;
-  margin-top: 2.5rem;
+  margin-top: 1.5rem;
 }
 
 @media (min-width: 600px) {
   .creatures {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-@media (min-width: 900px) {
-  .creatures {
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(3, 1fr);
   }
 }
 
@@ -562,6 +659,21 @@ input[type="range"]::-moz-range-thumb {
   border-radius: 2px;
   padding: 1.5rem;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
+}
+
+.creature::after {
+  content: 'BOT';
+  position: absolute;
+  top: 0.75rem;
+  right: 0.75rem;
+  font-size: 9px;
+  font-weight: 500;
+  letter-spacing: 0.18em;
+  color: var(--ink-faint);
+  background: var(--bg-deep);
+  padding: 2px 7px;
+  border-radius: 8px;
 }
 
 .creature:hover {
@@ -715,6 +827,8 @@ footer .signature {
   .closing { padding: 1.75rem; }
   .closing p { font-size: 1rem; }
   .table-card { padding: 1.25rem; }
+  .bot-feature { padding: 1.5rem; }
+  .bot-feature-icon { width: 100px; height: 100px; }
 }
 </style>
 </head>
@@ -732,7 +846,7 @@ footer .signature {
   <div class="hero-content">
     <div class="hero-eyebrow">A vision for restored farming</div>
     <h1>The land was always <em>carrying more</em> — we just couldn't count it.</h1>
-    <p class="hero-lede">A walk through the future of food, where Dorset's wheat fields become wood-pasture mosaics and gentle creatures bring in the harvest one fruit, one mushroom, one handful at a time.</p>
+    <p class="hero-lede">A walk through the future of food, where Dorset's wheat fields become wood-pasture mosaics and gentle <em>regenerative bots</em> bring in the harvest one fruit, one acorn, one handful at a time.</p>
   </div>
 
   <div class="hero-scroll">scroll to begin</div>
@@ -842,13 +956,64 @@ footer .signature {
   </div>
 </section>
 
-<!-- ============ STEP 4: CREATURES ============ -->
+<!-- ============ STEP 4: REGENERATIVE BOTS ============ -->
 <section>
   <div class="container">
     <div class="section-meta">Four — the unlock</div>
     <h2>But how do we <em>pick it</em>?</h2>
     <p>This is the question that's stopped wild farming for a hundred years. A combine harvester needs a flat field of identical plants — one species, one height, one ripeness. A food forest is the opposite: every plant a different kind, ripening at a different time, hidden under leaves and in soil. Until now there was only one way to harvest it: by hand, slowly. So we never did, at scale.</p>
-    <p><strong>What changes now:</strong> small, gentle creatures — shaped after the wild ones whose work they share — that can pick one fruit, one mushroom, one handful at a time. You speak to them. They listen. They bring the harvest in.</p>
+
+    <div class="bot-intro">
+      <p><strong>What changes now: regenerative bots.</strong> Small machines built in the shape of the wild things whose work they share — a squirrel, a crow, a mole, a bee. They listen. They learn the land. They pick one fruit, one acorn, one handful at a time. They give way to anything wild that's already doing the job. They leave the soil richer than they found it. <em>They are the tool that finally lets the land be what it wants to be.</em></p>
+    </div>
+
+    <!-- Featured bot: Red Squirrel -->
+    <div class="bot-feature">
+      <span class="bot-feature-tag">Meet the first bot</span>
+      <svg class="bot-feature-icon" viewBox="0 0 140 140" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="Illustration of a red squirrel-shaped harvesting bot holding an acorn">
+        <!-- bushy tail -->
+        <path d="M30 88 Q14 72 14 50 Q14 36 28 32 Q40 38 36 58 Q34 76 44 92 Q38 100 30 88 Z" fill="#c4612a" stroke="#7a3010" stroke-width="2"/>
+        <path d="M22 50 Q26 42 32 40 M20 60 Q26 56 30 56 M22 72 Q28 70 32 70" stroke="#7a3010" stroke-width="0.8" fill="none" opacity="0.6"/>
+        <!-- body -->
+        <ellipse cx="62" cy="82" rx="22" ry="16" fill="#c4612a" stroke="#7a3010" stroke-width="2"/>
+        <!-- belly -->
+        <ellipse cx="62" cy="88" rx="14" ry="9" fill="#e8c8a0" opacity="0.8"/>
+        <!-- head -->
+        <ellipse cx="84" cy="62" rx="14" ry="13" fill="#c4612a" stroke="#7a3010" stroke-width="2"/>
+        <!-- ear tufts (red squirrel signature) -->
+        <path d="M76 50 Q72 40 76 38 Q80 42 80 50 Z" fill="#c4612a" stroke="#7a3010" stroke-width="1.5"/>
+        <path d="M92 50 Q96 40 92 38 Q88 42 88 50 Z" fill="#c4612a" stroke="#7a3010" stroke-width="1.5"/>
+        <!-- eye (camera lens — gives a subtle bot cue) -->
+        <circle cx="90" cy="60" r="3" fill="#1a1a17"/>
+        <circle cx="91" cy="59" r="1" fill="#d4a830"/>
+        <!-- nose -->
+        <ellipse cx="97" cy="64" rx="1.8" ry="1.4" fill="#2e1a10"/>
+        <!-- subtle seam line down body (bot detail) -->
+        <path d="M84 75 Q70 80 50 80" stroke="#7a3010" stroke-width="0.6" stroke-dasharray="2 2" opacity="0.5" fill="none"/>
+        <!-- front paws holding acorn -->
+        <ellipse cx="78" cy="92" rx="4" ry="5" fill="#a04a20" stroke="#7a3010" stroke-width="1.2"/>
+        <ellipse cx="88" cy="92" rx="4" ry="5" fill="#a04a20" stroke="#7a3010" stroke-width="1.2"/>
+        <!-- acorn -->
+        <ellipse cx="83" cy="98" rx="6" ry="8" fill="#c89058" stroke="#5a3010" stroke-width="1.5"/>
+        <path d="M77 94 Q83 90 89 94 Q89 98 83 98 Q77 98 77 94 Z" fill="#5a3010"/>
+        <circle cx="80" cy="94" r="0.6" fill="#2e1a10"/>
+        <circle cx="83" cy="93" r="0.6" fill="#2e1a10"/>
+        <circle cx="86" cy="94" r="0.6" fill="#2e1a10"/>
+        <path d="M83 90 L83 87" stroke="#5a3010" stroke-width="1" stroke-linecap="round"/>
+        <!-- back paw -->
+        <ellipse cx="56" cy="96" rx="5" ry="3" fill="#a04a20" stroke="#7a3010" stroke-width="1.2"/>
+        <!-- small antenna whisker — gentle bot tell -->
+        <line x1="100" y1="58" x2="108" y2="54" stroke="#7a3010" stroke-width="0.7"/>
+        <circle cx="108" cy="54" r="1" fill="#d4a830"/>
+      </svg>
+      <div>
+        <h3>Red — the squirrel bot</h3>
+        <div class="bot-feature-subtitle">Gathering acorns under the oaks at Hooke Park, October</div>
+        <p>Red climbs anything an oak grows. She tests each acorn with a soft probe — too green, drop it; ripe and sound, twist it free, store it in her cheek pouch, carry it home. In a single autumn morning she can bring in twenty kilos of acorn mast from a single old oak — food for pigs, food for flour, and seed for the next generation of trees. Every tenth acorn she plants, not collects. The oaks she helps spread will outlive every person reading this. And she defers to every wild red squirrel she meets — pausing, stepping back, letting them feed first. <strong>The bots aren't here to replace the wild. They're here to help it return.</strong></p>
+      </div>
+    </div>
+
+    <p>Red is the first. Here are some of the others — each one shaped after a wild creature whose work they share, each one designed to give way to the real thing wherever it still lives.</p>
 
     <div class="creatures">
       <div class="creature">
@@ -890,18 +1055,6 @@ footer .signature {
         <h3>Mole</h3>
         <p>Burrows along fungal networks without breaking them. Lifts a single carrot when asked.</p>
       </div>
-      <div class="creature">
-        <svg class="creature-icon" viewBox="0 0 56 56" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <ellipse cx="24" cy="32" rx="9" ry="6" fill="#a06038" stroke="#5a2e10" stroke-width="1.5"/>
-          <ellipse cx="34" cy="28" rx="5" ry="4" fill="#a06038" stroke="#5a2e10" stroke-width="1.5"/>
-          <path d="M22 38 Q14 44 8 50 Q14 48 18 42" fill="#a06038" stroke="#5a2e10" stroke-width="1.2"/>
-          <path d="M30 42 Q26 50 22 52" stroke="#5a2e10" stroke-width="1" fill="none"/>
-          <path d="M16 36 Q14 42 14 48" stroke="#5a2e10" stroke-width="1" fill="none"/>
-          <circle cx="36" cy="27" r="0.7" fill="#1a1a17"/>
-        </svg>
-        <h3>Squirrel</h3>
-        <p>Climbs anything. Tests every apple for ripeness with a soft probe before twisting it free.</p>
-      </div>
     </div>
   </div>
 </section>
@@ -935,6 +1088,7 @@ footer .signature {
           <li>Wild garlic & nettle pesto</li>
           <li>Watercress from a chalk stream</li>
           <li>Hazelnuts, walnuts, sweet chestnuts</li>
+          <li>Acorn flour from the autumn mast</li>
           <li>Six apple varieties, four pear</li>
           <li>Morels, chanterelles, blackberries</li>
           <li>Raw milk, eggs, honey</li>
@@ -944,8 +1098,8 @@ footer .signature {
     </div>
 
     <div class="closing">
-      <p>More food. More variety. Better food. Land that's getting <strong>richer instead of poorer</strong>. Animals living lives worth living. Streams full of fish again. And a creature called Wren who'll bring you wild garlic when you ask, because she's been listening from the hawthorn since dawn.</p>
-      <p>This isn't a fantasy of a smaller, simpler life. It's a fantasy of a <strong>more abundant one</strong>. The land was always carrying more. We're just finally going to be able to count it — and pick it — and share it.</p>
+      <p>More food. More variety. Better food. Land that's getting <strong>richer instead of poorer</strong>. Animals living lives worth living. Streams full of fish again. And a small red squirrel called Red who'll bring you acorns in autumn, who plants every tenth one she finds, and who steps aside the moment a wild red squirrel comes near.</p>
+      <p>This isn't a fantasy of a smaller, simpler life. It's a fantasy of a <strong>more abundant one</strong> — made possible by regenerative bots that work in service of the wild, not in place of it. The land was always carrying more. We're just finally going to be able to count it — and pick it — and share it.</p>
     </div>
   </div>
 </section>
@@ -1017,10 +1171,24 @@ footer .signature {
       const r = reveals[btn.dataset.r];
       const card = document.createElement('div');
       card.className = 'reveal-card';
-      card.innerHTML = '<h4>' + r.t + '</h4><p>' + r.b + '</p>';
-      revealEl.appendChild(card);
+      card.innerHTML = '<span class="reveal-newest-badge">just revealed</span><h4>' + r.t + '</h4><p>' + r.b + '</p>';
+
+      // Fade older cards and remove their "just revealed" badge
+      Array.from(revealEl.children).forEach(c => {
+        c.classList.add('fading');
+        const badge = c.querySelector('.reveal-newest-badge');
+        if(badge) badge.remove();
+      });
+
+      // Insert newest card at the TOP
+      revealEl.insertBefore(card, revealEl.firstChild);
+
+      // Smoothly scroll the new card into view
       requestAnimationFrame(() => {
-        requestAnimationFrame(() => card.classList.add('show'));
+        requestAnimationFrame(() => {
+          card.classList.add('show');
+          card.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        });
       });
     });
   });
@@ -1267,7 +1435,7 @@ footer .signature {
     { at: 22, label: 'Hedges and margins return', cap: "The hedgerows are back. Six-metre flowering margins line every field. The wheat block shrinks by a fifth, but total food rises — because hedgerow elder, sloe, hazel, blackberry, plus meat from a small herd, all start counting. Skylarks come back first. Then yellowhammers." },
     { at: 48, label: 'Wood-pasture mosaic', cap: "Now it looks like Knepp. Longhorn cattle and Tamworth pigs roam open silvopasture; their rooting and grazing build the soil that feeds wild fruit and nut trees. Cereal continues, in strips between the trees. Chalk-grassland orchids return where the spray rigs no longer reach." },
     { at: 75, label: 'Wood pasture and wild meadow', cap: "Beavers shape the wet ground. Red deer thin the saplings. The cattle and pigs are still here — fewer of them, but on richer pasture, producing more meat per acre than the dairy ever did. Wild garlic carpets the woodland in spring. Streams run clear enough for trout." },
-    { at: 100, label: 'Layered wild mosaic', cap: "A thousand acres of working wilderness. Food from every layer: nuts, fruit, leaves, roots, mushrooms, fish, game, free-range pork, longhorn beef, raw milk, eggs, honey. Most of it food no industrial system ever brought to market — because it ripens one fruit, one mushroom, one handful at a time. Now we can finally pick it." }
+    { at: 100, label: 'Layered wild mosaic', cap: "A thousand acres of working wilderness. Food from every layer: nuts, fruit, leaves, roots, mushrooms, fish, game, free-range pork, longhorn beef, raw milk, eggs, honey, and acorn flour from the autumn mast. Most of it food no industrial system ever brought to market — because it ripens one fruit, one acorn, one handful at a time. Now, with the regenerative bots, we can finally pick it." }
   ];
 
   function getStage(w){
